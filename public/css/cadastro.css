@@ -1,0 +1,55 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body{
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/868/612/7/simple-simple-background-minimalism-abstract-wallpaper-thumb.jpg'); 
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quadrado {
+  color: white;
+  padding: 2em;
+  background-color: rgba(17, 16, 16, 0.699);
+  border-radius: 1em;
+  border: 2px solid white;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.erro {
+  color: red;
+  font-size: small;
+}
+
+#log-link {
+  color: white;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+  font-size: 18px;
+  text-align: center;
+  text-decoration-line: none;
+  transition: .15s opacity ease-in-out;
+}
+
+#log-link:hover {
+  color: black;
+  opacity: .7;
+  text-decoration-line: underline;
+}
+
+#cad-envio{
+  background-color: black !important;
+  border: none;
+}

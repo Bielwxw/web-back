@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tarefasUP ✍🏻</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWOWSD_6LMxFao2n4OYEmA-hh4YYfRFO_WCg&usqp=CAU" type="image/x-icon">
+    <style>
+        body {
+            background-image: url('https://c1.wallpaperflare.com/preview/623/487/747/technology-code-coding-computer.jpg');
+            font-family: Arial, sans-serif; /* Fonte */
+            overflow: hidden;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: rgba(65, 64, 64, 0.623) !important; /* Cor de fundo do navbar */
+        }
+        a.active {
+            color: #fff !important;
+        }
+        a {
+            color: #d0d0d0 !important;
+        }
+        a:hover {
+            color: #efefef !important;
+        }
+
+        div:has(>#video){
+          display: flex;
+          justify-content: center;
+        }
+
+        #video {
+           width:60%; /* Largura total */
+            height: 400px; /* Altura fixa */
+            margin-top: 70px; /* Espaçamento superior */
+            border: none; /* Sem borda */
+        }
+
+        .container {
+            max-width: 800px; /* Largura máxima do conteúdo */
+            margin: 20px auto; /* Centralizar na página */
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 70vh;
+            background-size: 70%;
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-item:nth-child(1) .carousel-img {
+            background-image: url(https://images.ctfassets.net/spoqsaf9291f/546F1MvF9KlFXBOO41AKLx/605f38de934bb47bcd89e6335eee1242/projects.png);
+            
+        }
+        .carousel-item:nth-child(3) .carousel-img {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNi6IyJrgI2R4Hn1PXP9ZoX4xie9KQZOvuXw&usqp=CAU);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">TarefasUP 📂 </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cadastro">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/lista">Lista de Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="lista-tarefas">Lista Tarefas</a>
+                    </li>
+                </ul>
+            </div>
+            <form method="post" action="/logout">
+                <button type="submit" class="btn btn-dark">Sair</button>
+            </form>
+        </div>
+    </nav>
+
+<br>
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="carousel-img"></div>
+    </div>
+    <div class="carousel-item">
+        <div class="carousel-img">
+            <iframe id="video" src="https://www.youtube.com/embed/1RxvQ3-0WoU?si=fPj6lotZmIT_QDhp" title="YouTube video player" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="carousel-img"></div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
