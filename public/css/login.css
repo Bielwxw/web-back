@@ -5,7 +5,7 @@ body {
 }
 
 body{
-  background-image: url('https://c4.wallpaperflare.com/wallpaper/146/943/791/monochrome-abstract-digital-art-wallpaper-thumb.jpg');
+  background-image: url('https://c1.wallpaperflare.com/preview/644/560/36/business-cafe-coffee-drinking-thumbnail.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -14,9 +14,9 @@ body{
 }
 
 .quadrado {
-  color: black;
+  color: white;
   padding: 2em;
-  background-color: rgba(131, 120, 120, 0.63);
+  background-color: rgba(46, 44, 44, 0.63);
   opacity: 0.6em;
   border-radius: 1em;
   border: 3px solid white;
