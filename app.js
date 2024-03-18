@@ -65,7 +65,7 @@ app.post('/login', (req, res) => {
     for(let i = 0 ; i < pessoas.length ; i++){
         if(pessoas[i].email === req.body.email && pessoas[i].password === req.body.password) {
             req.session.login = req.body.email;
-            res.cookie('login', 'req.body.email');
+            res.cookie('login', req.body.email);
             res.redirect('/');
             console.log('Email:' + pessoas[i].email + '/' + 'senha:' + pessoas[i].password + '/' + 'Status : usuário logado');
             usuarioErrado = false;
