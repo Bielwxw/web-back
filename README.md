@@ -66,8 +66,8 @@ Este projeto consiste em uma aplicação web para gerenciamento de lista de tare
 - **`views/`:** Pasta contendo os arquivos de visualização EJS.
 - **`public/`:** Pasta para arquivos estáticos, como CSS e imagens.
 - **`routes/`:** Pasta para definir as rotas da aplicação.
-- **`middlewares/`:** Pasta para armazenar middlewares personalizados, como a verificação de usuário logado.
 - **`models/`:** Pasta para definição dos modelos de dados, como o modelo de usuário e de tarefa.
+- **`Controllers`:**Pasta para utilização de controles .
 
 -----------------------------------------------------------------
 
