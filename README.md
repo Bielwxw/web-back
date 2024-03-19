@@ -67,7 +67,7 @@ Este projeto consiste em uma aplicação web para gerenciamento de lista de tare
 - **`public/`:** Pasta para arquivos estáticos, como CSS e imagens.
 - **`routes/`:** Pasta para definir as rotas da aplicação.
 - **`models/`:** Pasta para definição dos modelos de dados, como o modelo de usuário e de tarefa.
-- **`Controllers`:**Pasta para utilização de controles .
+- **`controllers/`:** Pasta para utilização de controles .
 
 -----------------------------------------------------------------
 
