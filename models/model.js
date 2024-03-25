@@ -1,38 +1,40 @@
-let pessoas = [
-  { name: 'aaa', email: 'a@a', password: '123' },
-  { name: 'gabriel', email: 'gabriel@gmail.com', password: '143' },
-  { name: 'carlos', email: 'carlos@gmail.com' , password: '694' }
-];
+const bancoDeDados = require('./bcdd');
 
-function verificarUsuario(email, password) {
-  for(let i = 0 ; i < pessoas.length ; i++){
-    if(pessoas[i].email === email && pessoas[i].password === password) {
-      return true;
-    }
+async function verificarUsuario(email, password) {
+  let [ rows ] = await bancoDeDados.query("select * from usuarios where email = ? and password = ?", [email, password]);
+  if (rows.length === 0) {
+    return false;
+  } else {
+    return true;
   }
-  return false;
 }
 
-function cadastrarUsuario(usuario) {
-  pessoas.push({
-    name: usuario.name,
-    email: usuario.email,
-    password: usuario.password
-  });
+async function verificarSeEmailJaExiste(email) {
+  let [ rows ] = await bancoDeDados.query("select * from usuarios where email = ?", [email]);
+  if (rows.length === 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
-function deletarUsuario(name, email) {
-  const userIndex = pessoas.findIndex(user => user.name === name && user.email === email);
-  pessoas.splice(userIndex, 1);
+async function cadastrarUsuario(name, email, password) {
+  await bancoDeDados.query('insert into usuarios value(?, ?, ?)', [name, email, password]);
 }
 
-function getListaUsuarios() {
-  return pessoas;
+async function deletarUsuario(name, email) {
+  await bancoDeDados.query('delete from usuarios where name = ? and email = ?', [name, email]);
+}
+
+async function getListaUsuarios() {
+  let [rows] = await bancoDeDados.query('select * from usuarios');
+  return rows
 }
 
 module.exports = {
   verificarUsuario,
   cadastrarUsuario,
   deletarUsuario,
-  getListaUsuarios
+  getListaUsuarios,
+  verificarSeEmailJaExiste
 };

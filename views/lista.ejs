@@ -82,6 +82,7 @@
     <main>
         <div class="container">
             <h1>Lista de Usuários 📌</h1>
+            <div id="alerta"></div>
             <table id="table" class="table table-striped">
                 <thead>
                     <tr>
@@ -109,6 +110,15 @@
             }
 
             await fetch('/lista/json', options)
+                .then(res => res.json())
+                .catch(err => err.message = '')
+                .then(data => {
+                    if (data?.erro) {
+                        alerta.innerHTML = `<div class="alert alert-danger" role="alert">${data.erro}</div>`;
+                    } else {
+                        alerta.innerHTML = '';
+                    }
+                })
             gerarDadosDaTabela();
         }
 

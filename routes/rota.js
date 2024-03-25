@@ -26,15 +26,14 @@ router.get('/login', (req, res) => {
   }
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
   if (verificarSessao(req)) return;
-  controller.validacaoLogin(req, res);
+  await controller.validacaoLogin(req, res);
 });
 
 router.post('/logout', (req, res) => {
   if (verificarSessao(req)) {
       req.session.destroy(() => {
-          res.clearCookie('login');
           return res.redirect('/login');
       })
   }
@@ -48,15 +47,15 @@ router.get('/cadastro', (req, res) => {
   }
 });
 
-router.post('/cadastro', (req, res) => {
+router.post('/cadastro', async (req, res) => {
   if (!verificarSessao(req)) return;
-  controller.cadastrarUsuario(req, res);
+  await controller.cadastrarUsuario(req, res);
 });
 
-router.get('/lista-tarefas', (req, res) => {
+router.get('/lista-tarefas', async (req, res) => {
   if (verificarSessao(req)) {
       res.render('loginEfetuado', {
-        name: controller.getListaUsuarios().find(pessoa => pessoa.email === req.session.login ).name
+        name: (await controller.getListaUsuarios()).find(pessoa => pessoa.email === req.session.login).name
       });
   } else {
       res.redirect('/login');
@@ -65,21 +64,21 @@ router.get('/lista-tarefas', (req, res) => {
 
 router.get('/lista', (req, res) => {
   if (verificarSessao(req)) {
-      res.render('lista')
+      res.render('lista');
   } else {
       res.redirect('/login');
   }
 });
 
-router.post('/lista/json', (req, res) => {
+router.post('/lista/json', async (req, res) => {
   if (!verificarSessao(req)) return;
-  controller.deletarUsuario(req, res);
+  await controller.deletarUsuario(req, res);
 });
 
-router.get('/lista/json', (req, res) => {
+router.get('/lista/json', async (req, res) => {
   if (verificarSessao(req)) {
       res.status(200).json({
-          pessoas: controller.getListaUsuarios()
+          pessoas: (await controller.getListaUsuarios())
       });
   } else {
       res.redirect('/login');
